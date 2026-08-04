@@ -1,0 +1,11 @@
+# Replace this hostname with the DNS name pointing to the VPS.
+collector.example.com {
+	encode zstd gzip
+	reverse_proxy 127.0.0.1:4318
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		X-Content-Type-Options "nosniff"
+		X-Frame-Options "DENY"
+		-Server
+	}
+}

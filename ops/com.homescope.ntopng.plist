@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.homescope.ntopng</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/opt/homebrew/bin/ntopng</string>
+    <string>--interface</string>
+    <string>en0</string>
+    <string>--data-dir</string>
+    <string>/Users/YOUR_USERNAME/Library/Application Support/HomeScope/data/ntopng</string>
+    <string>--http-port</string>
+    <string>:3001</string>
+    <string>--https-port</string>
+    <string>0</string>
+    <string>--local-networks</string>
+    <string>192.168.1.0/24</string>
+    <string>--redis</string>
+    <string>127.0.0.1:6379@0</string>
+    <string>--disable-login</string>
+    <string>0</string>
+    <string>--user</string>
+    <string>YOUR_USERNAME</string>
+  </array>
+
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <true/>
+  <key>ProcessType</key>
+  <string>Background</string>
+
+  <key>StandardOutPath</key>
+  <string>/tmp/homescope-ntopng.log</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/homescope-ntopng.err</string>
+</dict>
+</plist>

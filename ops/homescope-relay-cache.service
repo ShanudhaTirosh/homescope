@@ -1,0 +1,22 @@
+[Unit]
+Description=HomeScope instant snapshot relay
+After=network-online.target caddy.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=homescope
+Group=homescope
+WorkingDirectory=/opt/homescope
+EnvironmentFile=/etc/homescope/relay.env
+ExecStart=/usr/local/bin/node /opt/homescope/relay-cache.mjs
+Restart=always
+RestartSec=2
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/homescope-relay
+
+[Install]
+WantedBy=multi-user.target

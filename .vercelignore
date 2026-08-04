@@ -1,0 +1,24 @@
+# Local dependencies and generated builds
+node_modules/
+.next/
+.vinext/
+dist/
+out/
+
+# Private runtime data and local tooling
+data/
+.wrangler/
+.vercel/
+.openai/
+.env*
+.homescope-cloud-secrets.json
+
+# Desktop-only sources and artifacts
+electron/
+desktop-assets/
+
+# Local test and coverage output
+coverage/
+outputs/
+work/
+npm-debug.log*
